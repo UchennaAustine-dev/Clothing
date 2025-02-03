@@ -3,23 +3,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Star, ShoppingCart } from "lucide-react";
-import { motion, HTMLMotionProps } from "framer-motion";
-
+import { motion, MotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import type { Product } from "@/types";
 import { memo } from "react";
 
-interface ProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ProductCardProps
+  extends Omit<MotionProps, "onAnimationStart" | "onDragStart"> {
   product: Product;
+  className?: string;
 }
-
-const MotionDiv = motion.div as unknown as React.FC<HTMLMotionProps<"div">>;
 
 export const ProductCard = memo(
   ({ product, className, ...props }: ProductCardProps) => {
     return (
-      <MotionDiv
+      <motion.div
         className={cn("group relative p-4", className)}
         {...props}
         whileHover={{ scale: 1.03 }}
@@ -62,7 +61,7 @@ export const ProductCard = memo(
             </div>
           </div>
         </Link>
-      </MotionDiv>
+      </motion.div>
     );
   }
 );

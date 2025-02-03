@@ -32,6 +32,7 @@ const NewsletterSection = memo(() => {
 
       setEmail("");
     } catch (error) {
+      console.error("Subscription error:", error); // Use the error variable
       toast({
         variant: "destructive",
         title: "Invalid email",
@@ -84,8 +85,8 @@ const NewsletterSection = memo(() => {
           className="text-lg text-muted-foreground"
         >
           Sign up for our newsletter and discover a world of fashion before
-          anyone else. Don't miss out on your chance to elevate your wardrobe
-          with our exclusive designs.
+          anyone else. Don&apos;t miss out on your chance to elevate your
+          wardrobe with our exclusive designs.
         </motion.p>
 
         {/* Animated Form */}

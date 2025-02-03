@@ -34,7 +34,7 @@ export function CollaborationSection() {
             <p className="max-w-md text-lg leading-relaxed text-stone-600">
               Experience the masterful fusion of Italian craftsmanship and
               modern luxury. Each piece in this exclusive collection reflects
-              Romano's signature attention to detail and timeless
+              Romano&apos;s signature attention to detail and timeless
               sophistication.
             </p>
           </div>

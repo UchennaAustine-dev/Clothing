@@ -49,7 +49,8 @@ const HeroSection = memo(() => {
           >
             Transform your living spaces with our curated collection of bespoke
             furniture. Each piece tells a story of craftsmanship, designed to
-            elevate your home's aesthetic while providing unparalleled comfort.
+            elevate your home&apos;s aesthetic while providing unparalleled
+            comfort.
           </motion.p>
 
           <motion.div
