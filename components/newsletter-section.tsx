@@ -32,7 +32,7 @@ const NewsletterSection = memo(() => {
 
       setEmail("");
     } catch (error) {
-      console.error("Subscription error:", error); // Use the error variable
+      console.error("Subscription error:", error);
       toast({
         variant: "destructive",
         title: "Invalid email",
@@ -51,13 +51,10 @@ const NewsletterSection = memo(() => {
       transition={{ duration: 0.6 }}
       className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-background via-background/95 to-background/90 px-8 py-16 text-foreground md:px-12 md:py-20"
     >
-      {/* Background Grid with Animated Gradient */}
       <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] [mask-image:radial-gradient(white,transparent_85%)]" />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 animate-gradient-x" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-2xl space-y-8 px-4 md:px-8">
-        {/* Animated Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +73,6 @@ const NewsletterSection = memo(() => {
           </span>
         </motion.h2>
 
-        {/* Animated Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +85,6 @@ const NewsletterSection = memo(() => {
           wardrobe with our exclusive designs.
         </motion.p>
 
-        {/* Animated Form */}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,38 +114,9 @@ const NewsletterSection = memo(() => {
               Subscribe
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
-            {/* Button Hover Effect */}
             <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary/80 to-primary/60 opacity-0 transition-opacity group-hover:opacity-100" />
           </Button>
         </motion.form>
-      </div>
-
-      {/* Background Gradients */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-primary/10 via-primary/5 to-transparent" />
-      </div>
-
-      {/* Floating Particles Animation */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: -20, x: Math.random() * 100 - 50 }}
-            animate={{ opacity: 1, y: "100vh", x: Math.random() * 100 - 50 }}
-            transition={{
-              duration: Math.random() * 5 + 5,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "linear",
-            }}
-            className="absolute h-1 w-1 rounded-full bg-primary/20"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
       </div>
     </motion.section>
   );

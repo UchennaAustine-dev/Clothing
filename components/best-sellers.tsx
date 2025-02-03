@@ -51,10 +51,11 @@ const bestsellers: Product[] = [
 
 export function Bestsellers() {
   return (
-    <section className="bg-stone-50 py-24">
-      <div className="container px-4 md:px-8">
+    <section className="bg-stone-50 py-20">
+      <div className="container px-6 md:px-12">
+        {/* Header */}
         <motion.div
-          className="mb-12 flex items-end justify-between"
+          className="mb-12 flex flex-wrap items-end justify-between gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -71,6 +72,7 @@ export function Bestsellers() {
           <span className="font-serif text-xl text-stone-400">2024</span>
         </motion.div>
 
+        {/* Product Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {bestsellers.map((product, index) => (
             <motion.div
@@ -81,37 +83,27 @@ export function Bestsellers() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-white shadow-md transition-shadow hover:shadow-xl">
+                {/* Product Image */}
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+
+                {/* Overlay Content */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
                   <div className="space-y-2 text-white">
                     <div className="text-sm font-medium text-amber-300">
                       In Stock
                     </div>
                     <div className="font-serif text-xl">{product.name}</div>
-                    {/* <div className="text-sm text-stone-300">{product.description}</div> */}
-                    <div className="flex items-center gap-2">
-                      {/* <div className="flex items-center">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-4 w-4 ${
-                              i < Math.floor(product.rating)
-                                ? "fill-amber-400 text-amber-400"
-                                : "text-stone-600"
-                            }`}
-                          />
-                        ))}
-                      </div> */}
-                      <span className="text-sm">({product.reviews})</span>
-                    </div>
                     <div className="text-xl font-light">
                       ${product.price.toLocaleString()}
                     </div>
+                    <span className="text-sm text-stone-300">
+                      ({product.reviews} Reviews)
+                    </span>
                   </div>
                 </div>
               </div>
@@ -119,6 +111,7 @@ export function Bestsellers() {
           ))}
         </div>
 
+        {/* View All Button */}
         <motion.div
           className="mt-12 flex justify-center"
           initial={{ opacity: 0, y: 20 }}

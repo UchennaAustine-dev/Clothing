@@ -52,15 +52,16 @@ const products: Product[] = [
 
 export function CollectionSection() {
   return (
-    <section className="space-y-12 py-24">
+    <section className="bg-stone-50 py-20">
       <motion.div
-        className="container px-4 md:px-8"
+        className="container px-6 md:px-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="space-y-2">
+        {/* Header */}
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-3">
             <div className="flex items-center space-x-2">
               <Star className="h-5 w-5 text-amber-500" />
               <span className="text-sm font-medium text-amber-700">
@@ -76,7 +77,8 @@ export function CollectionSection() {
             </p>
           </div>
 
-          <div className="flex items-center gap-6">
+          {/* Navigation Links */}
+          <div className="flex items-center gap-4 sm:gap-6">
             <Button
               variant="ghost"
               className="text-stone-600 hover:text-amber-700"
@@ -94,6 +96,7 @@ export function CollectionSection() {
           </div>
         </div>
 
+        {/* Product Grid */}
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product, index) => (
             <motion.div
@@ -104,12 +107,13 @@ export function CollectionSection() {
             >
               <ProductCard
                 product={product}
-                className="group rounded-xl border border-stone-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
+                className="group rounded-xl border border-stone-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-lg"
               />
             </motion.div>
           ))}
         </div>
 
+        {/* Explore Button */}
         <motion.div
           className="mt-12 flex justify-center"
           initial={{ opacity: 0, y: 20 }}
