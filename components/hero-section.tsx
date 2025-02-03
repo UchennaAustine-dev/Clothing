@@ -8,17 +8,19 @@ import { Sofa, ArrowRight, Phone } from "lucide-react";
 
 const HeroSection = memo(() => {
   return (
-    <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-stone-50 via-stone-100 to-stone-200 px-8 py-24">
-      {/* Textured background */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-30" />
+    <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-stone-50 via-stone-100 to-stone-200 px-6 py-20 md:px-12 lg:py-24">
+      {/* Textured Background */}
+      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-30 pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl grid gap-12 lg:grid-cols-2 items-center">
+      <div className="relative mx-auto max-w-7xl grid gap-12 md:grid-cols-2 items-center">
+        {/* Left Content */}
         <motion.div
           className="flex flex-col justify-center space-y-8"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          {/* Tagline */}
           <div className="inline-flex items-center space-x-2 rounded-full border border-stone-200 bg-white/80 px-4 py-2 text-sm backdrop-blur-sm">
             <span className="text-amber-700 font-medium">
               Artisan Collection
@@ -27,8 +29,9 @@ const HeroSection = memo(() => {
             <span className="text-stone-600">Handcrafted Excellence</span>
           </div>
 
+          {/* Heading */}
           <motion.h1
-            className="text-4xl font-serif font-medium tracking-tight sm:text-5xl xl:text-6xl"
+            className="text-4xl font-serif font-medium tracking-tight sm:text-5xl lg:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -41,6 +44,7 @@ const HeroSection = memo(() => {
             </span>
           </motion.h1>
 
+          {/* Description */}
           <motion.p
             className="max-w-[540px] text-lg text-stone-600 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
@@ -49,12 +53,12 @@ const HeroSection = memo(() => {
           >
             Transform your living spaces with our curated collection of bespoke
             furniture. Each piece tells a story of craftsmanship, designed to
-            elevate your home&apos;s aesthetic while providing unparalleled
-            comfort.
+            elevate your home’s aesthetic while providing unparalleled comfort.
           </motion.p>
 
+          {/* CTA Buttons */}
           <motion.div
-            className="flex gap-6"
+            className="flex flex-wrap gap-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -77,25 +81,27 @@ const HeroSection = memo(() => {
             </Button>
           </motion.div>
 
+          {/* Stats Section */}
           <motion.div
-            className="flex items-center space-x-8 pt-8 border-t border-stone-200"
+            className="flex flex-wrap items-center space-x-6 md:space-x-12 pt-8 border-t border-stone-200"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <div>
+            <div className="text-center md:text-left">
               <div className="text-3xl font-serif text-amber-700">25+</div>
               <div className="text-stone-600">Years of Excellence</div>
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <div className="text-3xl font-serif text-amber-700">100%</div>
               <div className="text-stone-600">Artisan Crafted</div>
             </div>
           </motion.div>
         </motion.div>
 
+        {/* Right Image */}
         <motion.div
-          className="relative aspect-[4/5] w-full"
+          className="relative aspect-[4/5] w-full max-w-lg mx-auto md:max-w-full"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}

@@ -32,26 +32,32 @@ const navigation = {
 export const SiteFooter = memo(() => {
   return (
     <footer className="border-t border-stone-200 bg-stone-50">
-      <div className="container py-16 px-4 md:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto max-w-screen-xl py-12 px-4 md:px-8">
+        <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {/* Logo & About */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-2">
               <Sofa className="h-8 w-8 text-amber-700" />
               <span className="font-serif text-2xl">Redoak</span>
             </Link>
-            <p className="text-stone-600 max-w-xs">
+            <p className="text-stone-600 max-w-xs text-sm">
               Crafting exceptional living spaces through timeless design and
               unparalleled craftsmanship since 1992.
             </p>
             <div className="flex space-x-4">
-              <Instagram className="h-5 w-5 text-stone-400 hover:text-amber-700" />
-              <Facebook className="h-5 w-5 text-stone-400 hover:text-amber-700" />
+              <a href="#" aria-label="Instagram">
+                <Instagram className="h-5 w-5 text-stone-400 hover:text-amber-700" />
+              </a>
+              <a href="#" aria-label="Facebook">
+                <Facebook className="h-5 w-5 text-stone-400 hover:text-amber-700" />
+              </a>
             </div>
           </div>
 
+          {/* Collections */}
           <div className="space-y-6">
             <h3 className="font-serif text-lg">Collections</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-sm">
               {navigation.collections.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -65,9 +71,10 @@ export const SiteFooter = memo(() => {
             </ul>
           </div>
 
+          {/* Services */}
           <div className="space-y-6">
             <h3 className="font-serif text-lg">Services</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-sm">
               {navigation.services.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -81,9 +88,10 @@ export const SiteFooter = memo(() => {
             </ul>
           </div>
 
+          {/* Contact Information */}
           <div className="space-y-6">
             <h3 className="font-serif text-lg">Contact</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-sm">
               <li>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-5 w-5 text-amber-700" />
@@ -116,8 +124,9 @@ export const SiteFooter = memo(() => {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center space-y-4 border-t border-stone-200 pt-8 text-sm text-stone-500">
-          <div className="flex space-x-6">
+        {/* Legal Links & Copyright */}
+        <div className="mt-12 border-t border-stone-200 pt-6 text-center text-sm text-stone-500">
+          <div className="flex flex-col items-center space-y-3 md:flex-row md:justify-center md:space-x-6 md:space-y-0">
             {navigation.legal.map((item) => (
               <Link
                 key={item.name}
@@ -128,7 +137,9 @@ export const SiteFooter = memo(() => {
               </Link>
             ))}
           </div>
-          <p>&copy; {new Date().getFullYear()} Redoak. All rights reserved.</p>
+          <p className="mt-4">
+            &copy; {new Date().getFullYear()} Redoak. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

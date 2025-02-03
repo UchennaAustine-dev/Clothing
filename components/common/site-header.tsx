@@ -27,7 +27,7 @@ const SiteHeader = memo(() => {
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       {/* Top Bar */}
       <div className="hidden border-b border-stone-200 bg-stone-50 py-2 lg:block">
-        <div className="container flex items-center justify-between px-8 text-sm text-stone-600">
+        <div className="container mx-auto flex max-w-screen-xl items-center justify-between px-4 md:px-8 text-sm text-stone-600">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4 text-amber-700" />
@@ -51,16 +51,19 @@ const SiteHeader = memo(() => {
 
       {/* Main Header */}
       <div className="border-b border-stone-200">
-        <div className="container flex h-20 items-center justify-between px-4 md:px-8">
+        <div className="container mx-auto flex max-w-screen-xl h-16 md:h-20 items-center justify-between px-4 md:px-8">
+          {/* Mobile Navigation */}
           <div className="flex items-center lg:hidden">
             <MobileNav />
           </div>
 
+          {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Sofa className="h-8 w-8 text-amber-700" />
             <span className="font-serif text-2xl font-medium">Redoak</span>
           </Link>
 
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex lg:space-x-8">
             {mainNav.map((item) => (
               <motion.div
@@ -81,7 +84,9 @@ const SiteHeader = memo(() => {
             ))}
           </nav>
 
-          <div className="flex items-center space-x-4">
+          {/* Action Buttons */}
+          <div className="flex items-center space-x-3 md:space-x-4">
+            {/* Search Button */}
             <SearchDialog>
               <Button
                 variant="ghost"
@@ -93,6 +98,7 @@ const SiteHeader = memo(() => {
               </Button>
             </SearchDialog>
 
+            {/* Account Button */}
             <Button
               variant="ghost"
               size="icon"
@@ -105,13 +111,14 @@ const SiteHeader = memo(() => {
               </Link>
             </Button>
 
+            {/* Shopping Cart */}
             <Cart />
           </div>
         </div>
       </div>
 
-      {/* Category Navigation */}
-      <div className="container border-b border-stone-200 px-4 md:px-8">
+      {/* Category Navigation (Responsive) */}
+      <div className="container mx-auto max-w-screen-xl border-b border-stone-200 px-4 md:px-8">
         <CategoryNav />
       </div>
     </header>
