@@ -6,9 +6,9 @@ import "./globals.css";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "AUSTINE - Fashion for All, Every Day",
+  title: "REDOAK - Fashion for All, Every Day",
   description:
-    "Discover your personal style and make a statement with every outfit.",
+    "Discover your personal style and make a statement with every furniture.",
 };
 
 export default function RootLayout({

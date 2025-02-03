@@ -1,13 +1,13 @@
 "use client";
 
-import { HeroSection } from "@/components/hero-section";
 import { CategoryNav } from "@/components/category-nav";
 import { CollectionSection } from "@/components/collection-section";
-import { BestSellers } from "@/components/best-sellers";
 import { CollaborationSection } from "@/components/collaboration-section";
-import { NewsletterSection } from "@/components/newsletter-section";
 import SiteHeader from "@/components/common/site-header";
 import { SiteFooter } from "@/components/common/site-footer";
+import HeroSection from "@/components/hero-section";
+import NewsletterSection from "@/components/newsletter-section";
+import { Bestsellers } from "@/components/best-sellers";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
           <HeroSection />
           <CategoryNav />
           <CollectionSection />
-          <BestSellers />
+          <Bestsellers />
           <CollaborationSection />
           <NewsletterSection />
         </div>
